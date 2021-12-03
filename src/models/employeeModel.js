@@ -14,7 +14,7 @@ var Employee = function(employee){
  
 // get all employees
 Employee.getAllEmployees = (result) =>{
-    dbConn.query('SELECT * FROM employees where ptype = "customer"', (err, res)=>{
+    dbConn.query('SELECT * FROM employees ', (err, res)=>{
         if(err){
             console.log('Error while fetching employess', err);
             result(null,err);

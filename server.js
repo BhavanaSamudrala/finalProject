@@ -24,12 +24,12 @@ app.get('/', (req, res)=>{
 // import employee routes
 const employeeRoutes = require('./src/routes/employeeRoute.js');
 // import customer routes
-//const customerRoutes = require('./src/routes/customerRoute');
+const customerRoutes = require('./src/routes/customerRoute');
  
 // create employee routes(they are going to be different routes for different functions)
 app.use('/api/v1/employee', employeeRoutes);
  // create customer routes
-//app.use('/api/v1/customer', customerRoutes);
+app.use('/api/v1/customer', customerRoutes);
  
 
 // listen to the port
