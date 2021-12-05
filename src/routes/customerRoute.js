@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
  
-const CustomerController = require('../controllers/customerController');
+const CustomerController = require('../controllers/customer.controller');
  
 // get all employees
 router.get('/', CustomerController.getCustomerList);

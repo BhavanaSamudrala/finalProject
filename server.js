@@ -22,7 +22,7 @@ app.get('/', (req, res)=>{
 });
 
 // import employee routes
-const employeeRoutes = require('./src/routes/employeeRoute.js');
+const employeeRoutes = require('./src/routes/employeeRoute');
 // import customer routes
 const customerRoutes = require('./src/routes/customerRoute');
  

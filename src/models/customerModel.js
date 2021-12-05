@@ -26,7 +26,7 @@ Customer.getAllCustomers = (result) =>{
  
 // get customer by Name for Search Data by their first name 
 Customer.getCustomerByName = (first_name, result)=>{
-    dbConn.query('SELECT * FROM Customers WHERE first_name=?', first_name, (err, res)=>{
+    dbConn.query('SELECT * FROM customers WHERE first_name=?', first_name, (err, res)=>{
         if(err){
             console.log('Error while fetching Customer by id', err);
             result(null, err);
@@ -68,7 +68,7 @@ Customer.getCustomerByID = (id, result)=>{
  
 // update Customer
 Customer.updateCustomer = (id, customerReqData, result)=>{
-    dbConn.query("UPDATE Customers SET first_name=?,last_name=?,email=?,phone=?,ptype=? WHERE id = ?", [customerReqData.first_name,customerReqData.last_name,customerReqData.email,customerReqData.phone,customerReqData.ptype, id], (err, res)=>{
+    dbConn.query("UPDATE customers SET first_name=?,last_name=?,email=?,phone=?,ptype=? WHERE id = ?", [customerReqData.first_name,customerReqData.last_name,customerReqData.email,customerReqData.phone,customerReqData.ptype, id], (err, res)=>{
         if(err){
             console.log('Error while updating the Customer');
             result(null, err);
@@ -90,15 +90,6 @@ Customer.deleteCustomer = (id, result)=>{
             result(null, res);
         }
     })
-    // dbConn.query("UPDATE customers SET is_deleted=? WHERE id = ?", [1, id], (err, res)=>{
-    //     if(err){
-    //         console.log('Error while deleting the Customer');
-    //         result(null, err);
-    //     }else{
-    //         console.log("Customer deleted successfully");
-    //         result(null, res);
-    //     }
-    // });
 }
  
 module.exports = Customer;
